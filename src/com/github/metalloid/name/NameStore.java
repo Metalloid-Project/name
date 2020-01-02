@@ -1,5 +1,6 @@
 package com.github.metalloid.name;
 
+import com.github.metalloid.pagefactory.controls.Control;
 import org.openqa.selenium.WebElement;
 
 import java.lang.reflect.Field;
@@ -14,7 +15,12 @@ public class NameStore {
             Name annotation = field.getAnnotation(Name.class);
             if (annotation != null) {
                 try {
-                    map.put((WebElement) field.get(pageObject), annotation.Description());
+                    Object object = field.get(pageObject);
+                    if (object.getClass().isAssignableFrom(WebElement.class)) {
+                        map.put((WebElement) object, annotation.Description());
+                    } else if (object.getClass().isAssignableFrom(Control.class)) {
+                        map.put(((Control) object).element(), annotation.Description());
+                    }
                 } catch (IllegalAccessException e) {
                     throw new RuntimeException(e);
                 }
@@ -24,5 +30,9 @@ public class NameStore {
 
     public static String getDescription(WebElement element) {
         return map.get(element);
+    }
+
+    public static String getDescription(Control control) {
+        return getDescription(control.element());
     }
 }
