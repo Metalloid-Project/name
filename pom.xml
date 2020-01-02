@@ -126,8 +126,8 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/Metalloid-Project/Metalloid-Page-Factory.git</connection>
-        <developerConnection>scm:git:ssh://github.com/Metalloid-Project/Metalloid-Page-Factory.git</developerConnection>
-        <url>https://github.com/Metalloid-Project/Metalloid-Page-Factory</url>
+        <connection>scm:git:git://github.com/Metalloid-Project/name.git</connection>
+        <developerConnection>scm:git:ssh://github.com/Metalloid-Project/name.git</developerConnection>
+        <url>https://github.com/Metalloid-Project/name</url>
     </scm>
 </project>
