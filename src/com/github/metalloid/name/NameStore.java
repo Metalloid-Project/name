@@ -15,11 +15,12 @@ public class NameStore {
             Name annotation = field.getAnnotation(Name.class);
             if (annotation != null) {
                 try {
+                    field.setAccessible(true);
                     Object object = field.get(pageObject);
                     if (object.getClass().isAssignableFrom(WebElement.class)) {
-                        map.put((WebElement) object, annotation.Description());
+                        map.put((WebElement) object, annotation.description());
                     } else if (object.getClass().isAssignableFrom(Control.class)) {
-                        map.put(((Control) object).element(), annotation.Description());
+                        map.put(((Control) object).element(), annotation.description());
                     }
                 } catch (IllegalAccessException e) {
                     throw new RuntimeException(e);
