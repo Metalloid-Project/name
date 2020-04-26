@@ -1,5 +1,16 @@
 # @Name annotation for WebElements and Controls
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.metalloid-project/metalloid-webelement-name/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.metalloid-project/metalloid-webelement-name)
+
+Maven dependency:
+```
+<!-- https://mvnrepository.com/artifact/com.github.metalloid-project/webdriver-utils -->
+<dependency>
+    <groupId>com.github.metalloid-project</groupId>
+    <artifactId>metalloid-webelement-name</artifactId>
+    <version>2.0</version>
+</dependency>
+```
 
 This library allows you to annotate `WebElement`s and `Control`s with `@Name` annotation which accepts `String` as an argument.
 
